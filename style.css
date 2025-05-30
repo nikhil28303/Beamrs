@@ -1,0 +1,43 @@
+body {
+    background: linear-gradient(120deg, #220000, #440000, #220000);
+    background-size: 300% 300%;
+    animation: backgroundAnimation 15s infinite alternate ease-in-out;
+    color: #fff;
+    font-family: "Arial Black", sans-serif;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.container, .admin-container, .admin-section {
+    max-width: 800px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 15px;
+    background: rgba(30, 0, 0, 0.85);
+    box-shadow: 0 0 25px #ff0000;
+    border: 2px solid #ff5500;
+}
+
+.button {
+    background: linear-gradient(45deg, #ff0000, #ff5500);
+    border: none;
+    color: white;
+    padding: 15px 45px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 15px auto;
+    width: 80%;
+    max-width: 320px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.button:hover {
+    background: linear-gradient(45deg, #ff5500, #ff0000);
+    transform: scale(1.1);
+    box-shadow: 0 0 25px #ff5500;
+}
