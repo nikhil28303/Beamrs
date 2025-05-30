@@ -6,15 +6,15 @@
     <title>Admin Panel - BEAMRS</title>
     <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="fade-in">
     <div class="admin-container">
-        <h2>Admin Login</h2>
-        <input type="password" class="admin-input" id="adminPin" placeholder="Enter Admin PIN" />
+        <h2 class="glow-text">Admin Login</h2>
+        <input type="password" class="admin-input" id="adminPin" placeholder="Enter Admin PIN">
         <button class="button" onclick="checkPin()">Login</button>
     </div>
 
     <div id="adminSection" class="admin-section" style="display: none;">
-        <h2>Site Code Editor</h2>
+        <h2 class="glow-text">Site Code Editor</h2>
         <textarea id="siteCode" class="code-editor"></textarea>
         <button class="button" onclick="updateSite()">Save Changes</button>
     </div>
