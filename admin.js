@@ -1,5 +1,5 @@
 function hashPin(pin) {
-  return btoa(pin + "secureSalt");
+  return btoa(pin + "secureSalt"); // basic obfuscation
 }
 
 function checkPin() {
@@ -25,36 +25,13 @@ function updateSite() {
 
 function loadSiteCode() {
   document.getElementById("siteCode").value =
-    localStorage.getItem("siteContent") || "<h2>Welcome to BEAMRS</h2>";
+    localStorage.getItem("siteContent") || "<h2>Welcome to Beamrs</h2>";
 }
 
 window.onload = function () {
-  const siteContent = document.getElementById("siteContent");
-  if (siteContent) {
-    siteContent.innerHTML =
-      localStorage.getItem("siteContent") || "<h2>Welcome to BEAMRS</h2>";
-  }
-
-  const buttons = [
-    {
-      label: "Generator 1",
-      link: "https://app.genn.lu/auth/beamrslol",
-    },
-    {
-      label: "Generator 2",
-      link: "https://ro.blox.com.pk/dashboard/?code=OTMzMzE2NTEwMjg3MTcyMDY5Ng==",
-    },
-  ];
-
-  const container = document.getElementById("buttonsContainer");
-  if (container) {
-    buttons.forEach(btn => {
-      const a = document.createElement("a");
-      a.href = btn.link;
-      a.innerText = btn.label;
-      a.className = "button";
-      a.target = "_blank";
-      container.appendChild(a);
-    });
+  const contentContainer = document.getElementById("siteContent");
+  if (contentContainer) {
+    contentContainer.innerHTML =
+      localStorage.getItem("siteContent") || "<h2>Welcome to Beamrs</h2>";
   }
 };
