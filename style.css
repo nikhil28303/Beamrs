@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     background: linear-gradient(120deg, #220000, #440000, #220000);
     background-size: 300% 300%;
@@ -6,8 +7,10 @@ body {
     font-family: "Arial Black", sans-serif;
     text-align: center;
     padding: 40px 20px;
+    margin: 0;
 }
 
+/* Container Styling */
 .container, .admin-container, .admin-section {
     max-width: 800px;
     margin: auto;
@@ -18,6 +21,17 @@ body {
     border: 2px solid #ff5500;
 }
 
+/* Title Styling */
+.title {
+    font-size: 60px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 0 0 30px #ff5500;
+    margin-bottom: 30px;
+    letter-spacing: 4px;
+}
+
+/* Buttons */
 .button {
     background: linear-gradient(45deg, #ff0000, #ff5500);
     border: none;
@@ -40,4 +54,38 @@ body {
     background: linear-gradient(45deg, #ff5500, #ff0000);
     transform: scale(1.1);
     box-shadow: 0 0 25px #ff5500;
+}
+
+/* Code Editor for Admin Panel */
+.code-editor {
+    width: 100%;
+    height: 300px;
+    font-family: monospace;
+    background: #222;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #ff5500;
+    box-shadow: 0 0 15px #ff5500;
+}
+
+/* Input Fields */
+.admin-input {
+    width: 80%;
+    padding: 10px;
+    font-size: 18px;
+    margin: 10px auto;
+    display: block;
+    text-align: center;
+    border-radius: 8px;
+    border: 2px solid #ff5500;
+    background: rgba(50, 0, 0, 0.9);
+    color: #fff;
+}
+
+/* Animations */
+@keyframes backgroundAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
