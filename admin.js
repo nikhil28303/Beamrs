@@ -19,39 +19,42 @@ function checkPin() {
 function updateSite() {
   const newCode = document.getElementById("siteCode").value;
   localStorage.setItem("siteContent", newCode);
-  alert("Site content updated!");
+  alert("Site updated!");
   location.reload();
 }
 
 function loadSiteCode() {
-  const saved = localStorage.getItem("siteContent") || "<h2>Welcome to Beamrs</h2>";
-  document.getElementById("siteCode").value = saved;
-}
-
-// Visitor counter (local only)
-function countVisitor() {
-  if (!sessionStorage.getItem("hasVisited")) {
-    let visits = parseInt(localStorage.getItem("visitCount") || "0");
-    visits++;
-    localStorage.setItem("visitCount", visits);
-    sessionStorage.setItem("hasVisited", "true");
-  }
-
-  const counter = document.getElementById("visitCount");
-  if (counter) {
-    counter.textContent = localStorage.getItem("visitCount") || "0";
-  }
+  document.getElementById("siteCode").value =
+    localStorage.getItem("siteContent") || "<h2>Welcome to BEAMRS</h2>";
 }
 
 window.onload = function () {
-  if (!location.pathname.includes("admin")) {
-    const content = localStorage.getItem("siteContent");
-    if (content) {
-      const container = document.getElementById("siteContent");
-      if (container) {
-        container.innerHTML = content;
-      }
-    }
-    countVisitor();
+  const siteContent = document.getElementById("siteContent");
+  if (siteContent) {
+    siteContent.innerHTML =
+      localStorage.getItem("siteContent") || "<h2>Welcome to BEAMRS</h2>";
+  }
+
+  const buttons = [
+    {
+      label: "Generator 1",
+      link: "https://app.genn.lu/auth/beamrslol",
+    },
+    {
+      label: "Generator 2",
+      link: "https://ro.blox.com.pk/dashboard/?code=OTMzMzE2NTEwMjg3MTcyMDY5Ng==",
+    },
+  ];
+
+  const container = document.getElementById("buttonsContainer");
+  if (container) {
+    buttons.forEach(btn => {
+      const a = document.createElement("a");
+      a.href = btn.link;
+      a.innerText = btn.label;
+      a.className = "button";
+      a.target = "_blank";
+      container.appendChild(a);
+    });
   }
 };
