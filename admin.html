@@ -14,14 +14,9 @@
     </div>
 
     <div id="adminSection" class="admin-section" style="display: none;">
-        <h2>Edit Generator Links</h2>
-        <label>Generator Link:</label>
-        <input type="text" class="admin-input" id="newGenerator">
-        <label>Backup Link:</label>
-        <input type="text" class="admin-input" id="newBackup">
-        <label>Refresher Link:</label>
-        <input type="text" class="admin-input" id="newRefresher">
-        <button class="button" onclick="updateLinks()">Update Links</button>
+        <h2>Site Code Editor</h2>
+        <textarea id="siteCode" class="code-editor"></textarea>
+        <button class="button" onclick="updateSite()">Save Changes</button>
     </div>
 
     <script src="admin.js"></script>
