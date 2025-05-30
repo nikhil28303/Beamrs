@@ -10,31 +10,23 @@ function checkPin() {
     if (userHash === storedHash) {
         document.getElementById("adminSection").style.display = "block";
         document.querySelector(".admin-container").style.display = "none";
+        loadSiteCode(); // Load stored site code
     } else {
         alert("Incorrect PIN!");
     }
 }
 
-function updateLinks() {
-    const generator = document.getElementById("newGenerator").value;
-    const backup = document.getElementById("newBackup").value;
-    const refresher = document.getElementById("newRefresher").value;
-
-    // Ensure links are valid
-    if (generator.startsWith("http") && backup.startsWith("http") && refresher.startsWith("http")) {
-        localStorage.setItem("generatorLink", generator);
-        localStorage.setItem("backupLink", backup);
-        localStorage.setItem("refresherLink", refresher);
-        alert("Links Updated!");
-        location.reload(); // Reloads the page to apply new links
-    } else {
-        alert("Please enter valid URLs!");
-    }
+function updateSite() {
+    const newCode = document.getElementById("siteCode").value;
+    localStorage.setItem("siteContent", newCode);
+    alert("Site updated!");
+    location.reload(); // Reload page to apply changes
 }
 
-// Load stored links for main website dynamically
+function loadSiteCode() {
+    document.getElementById("siteCode").value = localStorage.getItem("siteContent") || "<h2>Welcome to Beamrs</h2>";
+}
+
 window.onload = function () {
-    document.getElementById("generatorLink").href = localStorage.getItem("generatorLink") || "#";
-    document.getElementById("backupLink").href = localStorage.getItem("backupLink") || "#";
-    document.getElementById("refresherLink").href = localStorage.getItem("refresherLink") || "#";
+    document.getElementById("siteContent").innerHTML = localStorage.getItem("siteContent") || "<h2>Welcome to Beamrs</h2>";
 };
