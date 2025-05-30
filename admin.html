@@ -1,16 +1,17 @@
-<!-- admin.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Admin Panel - BEAMRS</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <div class="admin-container anime-transition">
+  <div class="anime-transition"></div>
+
+  <div class="admin-container">
     <h2>Admin Login</h2>
-    <input type="password" class="admin-input" id="adminPin" placeholder="Enter Admin PIN" />
+    <input type="password" class="admin-input" id="adminPin" placeholder="Enter Admin PIN"/>
     <button class="button" onclick="checkPin()">Login</button>
   </div>
 
@@ -20,6 +21,6 @@
     <button class="button" onclick="updateSite()">Save Changes</button>
   </div>
 
-  <script src="admin.js"></script>
+  <script type="module" src="admin.js"></script>
 </body>
 </html>
