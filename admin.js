@@ -16,13 +16,25 @@ function checkPin() {
 }
 
 function updateLinks() {
-    localStorage.setItem("generatorLink", document.getElementById("newGenerator").value);
-    localStorage.setItem("backupLink", document.getElementById("newBackup").value);
-    localStorage.setItem("refresherLink", document.getElementById("newRefresher").value);
-    alert("Links Updated!");
+    const generator = document.getElementById("newGenerator").value;
+    const backup = document.getElementById("newBackup").value;
+    const refresher = document.getElementById("newRefresher").value;
+
+    // Ensure links are valid
+    if (generator.startsWith("http") && backup.startsWith("http") && refresher.startsWith("http")) {
+        localStorage.setItem("generatorLink", generator);
+        localStorage.setItem("backupLink", backup);
+        localStorage.setItem("refresherLink", refresher);
+        alert("Links Updated!");
+        location.reload(); // Reloads the page to apply new links
+    } else {
+        alert("Please enter valid URLs!");
+    }
 }
 
-// Load stored links for main website
-document.getElementById("generatorLink").href = localStorage.getItem("generatorLink") || "#";
-document.getElementById("backupLink").href = localStorage.getItem("backupLink") || "#";
-document.getElementById("refresherLink").href = localStorage.getItem("refresherLink") || "#";
+// Load stored links for main website dynamically
+window.onload = function () {
+    document.getElementById("generatorLink").href = localStorage.getItem("generatorLink") || "#";
+    document.getElementById("backupLink").href = localStorage.getItem("backupLink") || "#";
+    document.getElementById("refresherLink").href = localStorage.getItem("refresherLink") || "#";
+};
