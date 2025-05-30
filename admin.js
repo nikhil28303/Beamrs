@@ -1,5 +1,5 @@
 function hashPin(pin) {
-    return btoa(pin + "secureSalt"); // Simple obfuscation; real apps should hash server-side
+    return btoa(pin + "secureSalt");
 }
 
 function checkPin() {
@@ -29,14 +29,3 @@ function loadSiteCode() {
 }
 
 window.onload = function () {
-    // Only run on index.html (not admin.html)
-    if (!location.pathname.includes("admin")) {
-        const content = localStorage.getItem("siteContent");
-        if (content) {
-            const container = document.getElementById("siteContent");
-            if (container) {
-                container.innerHTML = content;
-            }
-        }
-    }
-};
