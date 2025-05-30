@@ -1,32 +1,45 @@
 function hashPin(pin) {
-    return btoa(pin + "secureSalt"); // Basic obfuscation; real hashing should be server-side
+    return btoa(pin + "secureSalt"); // Basic obfuscation (not real security)
 }
 
 function checkPin() {
-    const storedHash = "MjgzMDNzZWN1cmVTYWx0"; // Hashed version of PIN 28303
+    const storedHash = "MjgzMDNzZWN1cmVTYWx0"; // 28303 + "secureSalt"
     const userInput = document.getElementById("adminPin").value;
     const userHash = hashPin(userInput);
 
     if (userHash === storedHash) {
-        document.getElementById("adminSection").style.display = "block";
-        document.querySelector(".admin-container").style.display = "none";
-        loadSiteCode(); // Load stored site code
+        sessionStorage.setItem("isAdmin", "true");
+        showAdminPanel();
     } else {
         alert("Incorrect PIN!");
     }
+}
+
+function showAdminPanel() {
+    document.getElementById("adminSection").style.display = "block";
+    document.querySelector(".admin-container").style.display = "none";
+    loadSiteCode();
 }
 
 function updateSite() {
     const newCode = document.getElementById("siteCode").value;
     localStorage.setItem("siteContent", newCode);
     alert("Site updated!");
-    location.reload(); // Reload page to apply changes
+    location.reload(); // Refresh to apply content
 }
 
 function loadSiteCode() {
-    document.getElementById("siteCode").value = localStorage.getItem("siteContent") || "<h2>Welcome to Beamrs</h2>";
+    document.getElementById("siteCode").value =
+        localStorage.getItem("siteContent") || "<h2>Welcome to Beamrs</h2>";
 }
 
 window.onload = function () {
-    document.getElementById("siteContent").innerHTML = localStorage.getItem("siteContent") || "<h2>Welcome to Beamrs</h2>";
+    if (location.pathname.includes("admin")) {
+        if (sessionStorage.getItem("isAdmin") === "true") {
+            showAdminPanel();
+        }
+    } else {
+        document.getElementById("siteContent").innerHTML =
+            localStorage.getItem("siteContent") || "<h2>Welcome to Beamrs</h2>";
+    }
 };
