@@ -7,34 +7,30 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="anime-transition"></div>
-
   <div class="container">
-    <div class="title">BEAMRS</div>
-    <a href="https://discord.gg/EeW4eCRn" class="button" target="_blank">Join Our Community</a>
+    <div class="header">
+      <h1>BEAMRS</h1>
+      <a href="https://discord.gg/EeW4eCRn" class="button" target="_blank">Join Our Community</a>
+    </div>
 
-    <div class="generator-section">
-      <h2>Generator Hub</h2>
-      <div id="buttonsContainer">
-        <!-- 1st Generator (Best) -->
-        <a href="YOUR_FIRST_GENERATOR_LINK_HERE" target="_blank" class="button">1st Generator (Best)</a>
-
-        <!-- 2nd Generator -->
-        <a href="YOUR_SECOND_GENERATOR_LINK_HERE" target="_blank" class="button">2nd Generator</a>
-
-        <!-- Immortal -->
-        <a href="YOUR_IMMORTAL_GENERATOR_LINK_HERE" target="_blank" class="button">Immortal</a>
+    <section class="generator-section">
+      <h2>🎮 Generator Hub</h2>
+      <div class="button-group">
+        <a href="YOUR_FIRST_GENERATOR_LINK_HERE" class="button primary" target="_blank">1st Generator (Best)</a>
+        <a href="YOUR_SECOND_GENERATOR_LINK_HERE" class="button secondary" target="_blank">2nd Generator</a>
+        <a href="YOUR_IMMORTAL_GENERATOR_LINK_HERE" class="button danger" target="_blank">Immortal</a>
       </div>
-    </div>
+    </section>
 
-    <div id="siteContent">
+    <section class="content">
       <h2>Welcome to BEAMRS</h2>
-    </div>
+      <p>Your go-to hub for top-tier tools and community support. Stay connected, stay ahead.</p>
+    </section>
 
-    <div class="footer">
-      DM <strong>Midknight</strong> for info or concerns.<br/>
+    <footer class="footer">
+      DM <strong>Midknight</strong> for info or concerns. <br />
       Visitors: <span id="visitCount">Loading...</span>
-    </div>
+    </footer>
   </div>
 
   <script type="module" src="firebase.js"></script>
