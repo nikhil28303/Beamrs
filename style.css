@@ -1,10 +1,11 @@
-/* Reset */
+/* Reset default spacing */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Body background and font */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: #1a1c22;
@@ -16,6 +17,7 @@ body {
   padding: 2rem;
 }
 
+/* Centered container box */
 .container {
   background-color: #242731;
   padding: 2.5rem;
@@ -25,6 +27,7 @@ body {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
 
+/* Header styling */
 .header {
   text-align: center;
   margin-bottom: 2rem;
@@ -36,6 +39,7 @@ body {
   margin-bottom: 1rem;
 }
 
+/* Join button (Discord) */
 .join-btn {
   background: #45a29e;
   color: #fff;
@@ -50,6 +54,7 @@ body {
   background: #2c908b;
 }
 
+/* Generator section */
 .generator-section {
   text-align: center;
   margin-bottom: 2rem;
@@ -61,12 +66,14 @@ body {
   color: #c5c6c7;
 }
 
+/* Button group layout */
 .button-group {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
 }
 
+/* Base button style */
 .button {
   text-decoration: none;
   padding: 0.9rem;
@@ -75,26 +82,36 @@ body {
   transition: 0.3s ease;
   text-align: center;
   color: #fff;
+  display: block;
+  width: 100%;
 }
 
-.primary {
-  background: #66fcf1;
-  color: #0b0c10;
-}
-
-.secondary {
-  background: #4f5b93;
-}
-
-.tertiary {
-  background: #3e3f4b;
-}
-
+/* Button hover effect */
 .button:hover {
   filter: brightness(1.1);
   transform: scale(1.02);
 }
 
+/* Primary (Best Generator) */
+.primary {
+  background: #66fcf1;
+  color: #0b0c10;
+}
+
+/* Secondary (2nd Generator) */
+.secondary {
+  background: #4f5b93;
+  color: #ffffff;
+}
+
+/* Tertiary (Immortal) */
+.tertiary {
+  background: #3e3f4b;
+  color: #ffffff;
+  border: 1px solid #555;
+}
+
+/* Content section */
 .content {
   text-align: center;
   margin-bottom: 2rem;
@@ -102,7 +119,7 @@ body {
 
 .content h2 {
   font-size: 1.4rem;
-  color: #fff;
+  color: #ffffff;
   margin-bottom: 0.5rem;
 }
 
@@ -111,6 +128,7 @@ body {
   color: #c0c0c0;
 }
 
+/* Footer */
 .footer {
   text-align: center;
   font-size: 0.9rem;
